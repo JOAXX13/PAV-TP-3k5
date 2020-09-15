@@ -454,19 +454,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Bargas\\.nuget\\packages\\": {}
+    "C:\\Users\\a\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bargas\\source\\repos\\pavlog3\\pavlog3\\pavlog3.csproj",
+      "projectUniqueName": "C:\\Users\\a\\Desktop\\tp\\PAV-TP-3k5\\pavlog3\\pavlog3.csproj",
       "projectName": "pavlog3",
-      "projectPath": "C:\\Users\\Bargas\\source\\repos\\pavlog3\\pavlog3\\pavlog3.csproj",
-      "packagesPath": "C:\\Users\\Bargas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bargas\\source\\repos\\pavlog3\\pavlog3\\obj\\",
+      "projectPath": "C:\\Users\\a\\Desktop\\tp\\PAV-TP-3k5\\pavlog3\\pavlog3.csproj",
+      "packagesPath": "C:\\Users\\a\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\a\\Desktop\\tp\\PAV-TP-3k5\\pavlog3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Bargas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\a\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

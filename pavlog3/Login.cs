@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-
+using pavlog3.datos;
 namespace pavlog3
 {
     public partial class frmLogin : Form
