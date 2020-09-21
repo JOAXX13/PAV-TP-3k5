@@ -1,0 +1,15 @@
+C:\Users\a\Desktop\Nueva carpeta (2)\actividad_abm_usuarios_2\src\BugTracker\bin\Debug\BugTracker.exe.config
+C:\Users\a\Desktop\Nueva carpeta (2)\actividad_abm_usuarios_2\src\BugTracker\bin\Debug\BugTracker.exe
+C:\Users\a\Desktop\Nueva carpeta (2)\actividad_abm_usuarios_2\src\BugTracker\bin\Debug\BugTracker.pdb
+C:\Users\a\Desktop\Nueva carpeta (2)\actividad_abm_usuarios_2\src\BugTracker\obj\Debug\BugTracker.csprojAssemblyReference.cache
+C:\Users\a\Desktop\Nueva carpeta (2)\actividad_abm_usuarios_2\src\BugTracker\obj\Debug\BugTracker.GUILayer.frmConsultaBugs.resources
+C:\Users\a\Desktop\Nueva carpeta (2)\actividad_abm_usuarios_2\src\BugTracker\obj\Debug\BugTracker.GUILayer.frmDetalleBug.resources
+C:\Users\a\Desktop\Nueva carpeta (2)\actividad_abm_usuarios_2\src\BugTracker\obj\Debug\BugTracker.GUILayer.frmLogin.resources
+C:\Users\a\Desktop\Nueva carpeta (2)\actividad_abm_usuarios_2\src\BugTracker\obj\Debug\BugTracker.GUILayer.frmPrincipal.resources
+C:\Users\a\Desktop\Nueva carpeta (2)\actividad_abm_usuarios_2\src\BugTracker\obj\Debug\BugTracker.GUILayer.Usuarios.frmABMUsuario.resources
+C:\Users\a\Desktop\Nueva carpeta (2)\actividad_abm_usuarios_2\src\BugTracker\obj\Debug\BugTracker.GUILayer.Usuarios.frmUsuarios.resources
+C:\Users\a\Desktop\Nueva carpeta (2)\actividad_abm_usuarios_2\src\BugTracker\obj\Debug\BugTracker.Properties.Resources.resources
+C:\Users\a\Desktop\Nueva carpeta (2)\actividad_abm_usuarios_2\src\BugTracker\obj\Debug\BugTracker.csproj.GenerateResource.cache
+C:\Users\a\Desktop\Nueva carpeta (2)\actividad_abm_usuarios_2\src\BugTracker\obj\Debug\BugTracker.csproj.CoreCompileInputs.cache
+C:\Users\a\Desktop\Nueva carpeta (2)\actividad_abm_usuarios_2\src\BugTracker\obj\Debug\BugTracker.exe
+C:\Users\a\Desktop\Nueva carpeta (2)\actividad_abm_usuarios_2\src\BugTracker\obj\Debug\BugTracker.pdb
