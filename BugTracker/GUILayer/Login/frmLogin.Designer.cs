@@ -6,7 +6,7 @@
         /// Variable del diseñador requerida.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
+        
         /// <summary>
         /// Limpiar los recursos que se estén utilizando.
         /// </summary>
@@ -19,7 +19,7 @@
             }
             base.Dispose(disposing);
         }
-
+     
         #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
@@ -101,9 +101,11 @@
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblUsuario);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";
+            this.RightToLeftLayout = true;
             this.Text = "Inicio de Sesión";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);

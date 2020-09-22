@@ -21,9 +21,21 @@ namespace BugTracker.GUILayer
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+
             frmLogin login = new frmLogin();
             login.ShowDialog();
             lblUsuarioLogueado.Text = login.UsuarioLogueado;
+            if (lblUsuarioLogueado.Text == null)
+                Environment.Exit(0);
+            if (login.UsuarioPerfil == 1) 
+            {                       
+             soporteToolStripMenuItem.Enabled = true;   
+            }
+            else
+            soporteToolStripMenuItem.Enabled = false;
+
+
+
         }
 
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -47,8 +59,11 @@ namespace BugTracker.GUILayer
 
         private void UsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+               
             frmUsuarios frmDetalle = new frmUsuarios();
             frmDetalle.ShowDialog();
         }
+
+        
     }
 }

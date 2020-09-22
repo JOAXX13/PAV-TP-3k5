@@ -14,10 +14,12 @@ namespace BugTracker.GUILayer
 {
     public partial class frmLogin : Form
     {
+
+        
         private readonly UsuarioService usuarioService;
 
         public string UsuarioLogueado { get; internal set; }
-
+        public int UsuarioPerfil { get; internal set; }
         public frmLogin()
         {
             //Se inicializan los controles del formulario, si se elimina el formulario se inicia vacio (sin controles ).
@@ -28,7 +30,12 @@ namespace BugTracker.GUILayer
         private void btnSalir_Click(object sender, EventArgs e)
         {
             // Terminamos la aplicacion dado que el usuario no inicio sesion.
-            Environment.Exit(0);
+            DialogResult rpta;
+            rpta = MessageBox.Show("Seguro que desea salir?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rpta == DialogResult.No)
+                this.Show();
+            else
+                Environment.Exit(0);
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -53,6 +60,7 @@ namespace BugTracker.GUILayer
             {
                 // Login OK
                 UsuarioLogueado = usr.NombreUsuario;
+                UsuarioPerfil = usr.Perfil.IdPerfil;
                 this.Close();
             }
             else
@@ -70,7 +78,11 @@ namespace BugTracker.GUILayer
         {
             //Mostramos el formulario al centro del formulario padre.
             this.CenterToParent();
+           
         }
-    }
 
+    
+        
+    }
+        
 }

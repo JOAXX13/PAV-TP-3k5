@@ -54,7 +54,7 @@ namespace BugTracker.DataAccessLayer
                                           "        p.nombre perfil ",
                                           "   FROM Usuarios u",
                                           "  INNER JOIN Perfiles p ON u.id_perfil= p.id_perfil ",
-                                          "  WHERE usuario = @usuario");
+                                          "  WHERE usuario = @usuario AND u.borrado = 'False'");
 
             var parametros = new Dictionary<string, object>();
             parametros.Add("usuario", nombreUsuario);
