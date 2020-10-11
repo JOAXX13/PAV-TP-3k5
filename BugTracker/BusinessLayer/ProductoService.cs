@@ -19,6 +19,32 @@ namespace BugTracker.BusinessLayer
         {
             return oProductoDao.GetAll();
         }
+        internal bool CrearProducto(Producto oUsuario)
+        {
+            return oProductoDao.Create(oUsuario);
+        }
 
+        internal bool ActualizarProducto(Producto oProductoSelected)
+        {
+            return oProductoDao.Update(oProductoSelected);
+        }
+
+        internal bool EliminarProducto(Producto oProductoSelected)
+        {
+            return oProductoDao.Delete(oProductoSelected);
+        }
+
+        internal object ObtenerProducto(string producto)
+        {
+
+            return oProductoDao.GetProducto(producto);
+        }
+
+        internal IList<Producto> ConsultarConFiltro(Dictionary<string, object> filtros)
+        {
+            return oProductoDao.GetByFilters(filtros);
+        }
     }
+
 }
+

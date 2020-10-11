@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BugTracker.GUILayer.Productos;
 
 namespace BugTracker.GUILayer
 {
@@ -63,7 +64,11 @@ namespace BugTracker.GUILayer
             frmUsuarios frmDetalle = new frmUsuarios();
             frmDetalle.ShowDialog();
         }
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProducto frmDetalle = new frmProducto();
+            frmDetalle.ShowDialog();
+        }
 
-        
     }
 }

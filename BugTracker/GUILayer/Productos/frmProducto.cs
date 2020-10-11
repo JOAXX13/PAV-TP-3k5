@@ -12,40 +12,33 @@ using System.Windows.Forms;
 using BugTracker.BusinessLayer;
 using BugTracker.Entities;
 
-namespace BugTracker.GUILayer.Usuarios
+namespace BugTracker.GUILayer.Productos
 {
-    public partial class frmUsuarios : Form
+    public partial class frmProducto : Form
     {
 
-        private UsuarioService oUsuarioService;
-        private PerfilService oPerfilService;
+        private ProductoService oProductoService;
 
-        public frmUsuarios()
+        public frmProducto()
         {
             InitializeComponent();
             InitializeDataGridView();
-            oUsuarioService = new UsuarioService();
-            oPerfilService = new PerfilService();
+            oProductoService = new ProductoService();
+            
 
         }
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-            LlenarCombo(cboPerfiles, oPerfilService.ObtenerTodos(), "Nombre", "IdPerfil");
+          
             this.CenterToParent();
         }
 
-        private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
-        {
-            cbo.DataSource = source;
-            cbo.DisplayMember = display;
-            cbo.ValueMember = value;
-            cbo.SelectedIndex = -1;
-        }
+       
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frmABMUsuario formulario = new frmABMUsuario();
+            frmABMProducto formulario = new frmABMProducto();
             formulario.ShowDialog();
             
         }
@@ -56,12 +49,12 @@ namespace BugTracker.GUILayer.Usuarios
                 if (chkTodos.Checked)
                 {
                     txtNombre.Enabled = false;
-                    cboPerfiles.Enabled = false;
+                  
                 }
                 else
                 {
                     txtNombre.Enabled = true;
-                    cboPerfiles.Enabled = true;
+                   
                 }
             }
         }
@@ -78,20 +71,19 @@ namespace BugTracker.GUILayer.Usuarios
             if (!chkTodos.Checked)
             {
                 // Validar si el combo 'Perfiles' esta seleccionado.
-                if (cboPerfiles.Text != string.Empty && txtNombre.Text != string.Empty)
+                if (txtNombre.Text != string.Empty)
                 {
                     // Si el textBox tiene un texto no vacìo entonces recuperamos el valor del texto
                     // Si el cbo tiene un texto no vacìo entonces recuperamos el valor de la propiedad ValueMember
-                    filters.Add("idPerfil", cboPerfiles.SelectedValue);
-                    filters.Add("usuario", txtNombre.Text);
+                    filters.Add("nombre", txtNombre.Text);
 
-                    
+
 
 
                     if (filters.Count > 0)
-                        dgvUsers.DataSource = oUsuarioService.ConsultarConFiltro(filters);
-
+                        dgvProductos.DataSource = oProductoService.ConsultarConFiltro(filters);
                     
+
                 }
                 else
                     MessageBox.Show("Debe ingresar al menos un criterio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -99,19 +91,19 @@ namespace BugTracker.GUILayer.Usuarios
 
             }
             else
-                dgvUsers.DataSource = oUsuarioService.ObtenerTodos();
+                dgvProductos.DataSource = oProductoService.ObtenerTodos();
         }
 
         private void btnEditar_Click(System.Object sender, System.EventArgs e)
         {
-            frmABMUsuario formulario = new frmABMUsuario();
-            var usuario = (Usuario)dgvUsers.CurrentRow.DataBoundItem;
-            formulario.InicializarFormulario(frmABMUsuario.FormMode.actualizar, usuario);
+            frmABMProducto formulario = new frmABMProducto();
+            var producto = (Producto)dgvProductos.CurrentRow.DataBoundItem;
+            formulario.InicializarFormulario(frmABMProducto.FormMode.actualizar, producto);
             formulario.ShowDialog();
             btnConsultar_Click(sender, e);
         }
 
-        private void dgvUsers_CellClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
+        private void dgvProductos_CellClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
         {
             btnEditar.Enabled = true;
             btnQuitar.Enabled = true;
@@ -119,9 +111,9 @@ namespace BugTracker.GUILayer.Usuarios
 
         private void btnQuitar_Click(System.Object sender, System.EventArgs e)
         {
-            frmABMUsuario formulario = new frmABMUsuario();
-            var usuario = (Usuario)dgvUsers.CurrentRow.DataBoundItem;
-            formulario.InicializarFormulario(frmABMUsuario.FormMode.eliminar, usuario);
+            frmABMProducto formulario = new frmABMProducto();
+            var producto = (Producto)dgvProductos.CurrentRow.DataBoundItem;
+            formulario.InicializarFormulario(frmABMProducto.FormMode.eliminar, producto);
             formulario.ShowDialog();
             btnConsultar_Click(sender, e);
         }
@@ -129,38 +121,31 @@ namespace BugTracker.GUILayer.Usuarios
         private void InitializeDataGridView()
         {
             // Cree un DataGridView no vinculado declarando un recuento de columnas.
-            dgvUsers.ColumnCount = 3;
-            dgvUsers.ColumnHeadersVisible = true;
+            dgvProductos.ColumnCount = 1;
+            dgvProductos.ColumnHeadersVisible = true;
 
             // Configuramos la AutoGenerateColumns en false para que no se autogeneren las columnas
-            dgvUsers.AutoGenerateColumns = false;
+            dgvProductos.AutoGenerateColumns = false;
 
             // Cambia el estilo de la cabecera de la grilla.
             DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
 
-            columnHeaderStyle.BackColor = Color.Beige;
+            columnHeaderStyle.BackColor = Color.Black;
             columnHeaderStyle.Font = new Font("Verdana", 8, FontStyle.Bold);
-            dgvUsers.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
+            dgvProductos.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
 
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
-            dgvUsers.Columns[0].Name = "Usuario";
-            dgvUsers.Columns[0].DataPropertyName = "NombreUsuario";
+            dgvProductos.Columns[0].Name = "Producto";
+            dgvProductos.Columns[0].DataPropertyName = "Nombre";
             // Definimos el ancho de la columna.
-
-            dgvUsers.Columns[1].Name = "Email";
-            dgvUsers.Columns[1].DataPropertyName = "Email";
-
-            dgvUsers.Columns[2].Name = "Perfil";
-            dgvUsers.Columns[2].DataPropertyName = "Perfil";
+            dgvProductos.Columns[0].Width = 200;
 
             // Cambia el tamaño de la altura de los encabezados de columna.
-            dgvUsers.AutoResizeColumnHeadersHeight();
+            dgvProductos.AutoResizeColumnHeadersHeight();
 
             // Cambia el tamaño de todas las alturas de fila para ajustar el contenido de todas las celdas que no sean de encabezado.
-            dgvUsers.AutoResizeRows(
+            dgvProductos.AutoResizeRows(
                 DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
         }
-
- 
     }
 }

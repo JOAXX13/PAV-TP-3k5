@@ -101,7 +101,7 @@ namespace BugTracker.DataAccessLayer
         internal bool Create(Usuario oUsuario)
         {
             string str_sql = "     INSERT INTO Usuarios (usuario, password, email, id_perfil,estado, borrado)" +
-                             "     VALUES (@usuario, @password, @email, @id_perfil,'S',0)";
+                             "     VALUES (@usuario, @password, @email, @id_perfil,'S','False')";
 
             var parametros = new Dictionary<string, object>();
             parametros.Add("usuario", oUsuario.NombreUsuario);
